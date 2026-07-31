@@ -21,7 +21,9 @@ function App() {
           backdropFilter: "blur(12px)",
           color: "#111827",
           border: "1px solid rgba(255,255,255,0.25)",
-          borderRadius: "16px",
+          borderRadius: "10px",
+          paddingTop:"20px",
+          paddingBottom:"20px"
         }}
       />
     </>
