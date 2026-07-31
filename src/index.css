@@ -200,3 +200,527 @@
   scrollbar-width: thin;
   scrollbar-color: rgba(212, 168, 67, 0.5) transparent;
 }
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) translateX(0px);
+  }
+
+  50% {
+    transform: translateY(-25px) translateX(15px);
+  }
+
+  100% {
+    transform: translateY(0px) translateX(0px);
+  }
+}
+
+@keyframes floatReverse {
+  0% {
+    transform: translateY(0px) translateX(0px);
+  }
+
+  50% {
+    transform: translateY(25px) translateX(-15px);
+  }
+
+  100% {
+    transform: translateY(0px) translateX(0px);
+  }
+}
+
+.animated-grid {
+
+  background-image:
+      linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+
+  background-size:40px 40px;
+
+}
+
+/* ========================= */
+/* FLOAT */
+/* ========================= */
+
+@keyframes float {
+
+  0%{
+      transform:translateY(0px);
+  }
+
+  50%{
+      transform:translateY(-25px);
+  }
+
+  100%{
+      transform:translateY(0px);
+  }
+
+}
+
+@keyframes floatReverse {
+
+  0%{
+      transform:translateY(0px);
+  }
+
+  50%{
+      transform:translateY(25px);
+  }
+
+  100%{
+      transform:translateY(0px);
+  }
+
+}
+
+.animate-float{
+
+    animation:float 8s ease-in-out infinite;
+
+}
+
+.animate-float-reverse{
+
+    animation:floatReverse 10s ease-in-out infinite;
+
+}
+
+/* ========================= */
+/* ROTATE */
+/* ========================= */
+
+@keyframes rotateSlow {
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+.animate-rotate-slow{
+
+    animation:rotateSlow 35s linear infinite;
+
+}
+
+/* ========================= */
+/* PARTICLES */
+/* ========================= */
+
+@keyframes particle {
+
+    0%{
+        transform:translateY(0);
+        opacity:.3;
+    }
+
+    50%{
+        transform:translateY(-20px);
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(0);
+        opacity:.3;
+    }
+
+}
+
+.particle{
+
+    position:absolute;
+
+    width:8px;
+
+    height:8px;
+
+    border-radius:9999px;
+
+    background:white;
+
+    opacity:.5;
+
+    animation:particle 5s ease-in-out infinite;
+
+}
+
+.particle:nth-child(1){animation-delay:0s;}
+.particle:nth-child(2){animation-delay:1s;}
+.particle:nth-child(3){animation-delay:2s;}
+.particle:nth-child(4){animation-delay:3s;}
+
+/* =====================================================
+   ANIMATED GRADIENT BACKGROUND
+===================================================== */
+
+.animated-background {
+  background: linear-gradient(
+    -45deg,
+    #17133b,
+    #312e81,
+    #4f46e5,
+    #7c3aed,
+    #9333ea
+  );
+  background-size: 400% 400%;
+  animation: gradientMove 18s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* =====================================================
+   ANIMATED GRID
+===================================================== */
+
+.animated-grid {
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+
+  background-size: 45px 45px;
+
+  animation: gridMove 18s linear infinite;
+}
+
+@keyframes gridMove {
+
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 45px 45px;
+  }
+
+}
+
+/* =====================================================
+   GLOWING LIGHTS
+===================================================== */
+
+.glow-background::before,
+.glow-background::after {
+  content: "";
+
+  position: absolute;
+
+  border-radius: 9999px;
+
+  filter: blur(130px);
+
+  opacity: .4;
+}
+
+.glow-background::before {
+
+  width: 450px;
+  height: 450px;
+
+  left: -120px;
+  top: -100px;
+
+  background: #9333ea;
+
+  animation: glowOne 16s ease-in-out infinite;
+}
+
+.glow-background::after {
+
+  width: 500px;
+  height: 500px;
+
+  right: -150px;
+  bottom: -150px;
+
+  background: #06b6d4;
+
+  animation: glowTwo 18s ease-in-out infinite;
+}
+
+@keyframes glowOne {
+
+  50% {
+
+    transform:
+      translate(100px,60px)
+      scale(1.2);
+
+  }
+
+}
+
+@keyframes glowTwo {
+
+  50% {
+
+    transform:
+      translate(-80px,-50px)
+      scale(1.15);
+
+  }
+
+}
+
+/* =====================================================
+   TRIANGLES
+===================================================== */
+
+.triangle-shape {
+
+  position: absolute;
+
+  clip-path: polygon(
+    50% 0%,
+    100% 100%,
+    0% 100%
+  );
+
+  background: rgba(255,255,255,.08);
+
+  border: 1px solid rgba(255,255,255,.18);
+
+  backdrop-filter: blur(10px);
+
+  -webkit-backdrop-filter: blur(10px);
+
+  box-shadow:
+    0 0 25px rgba(255,255,255,.05);
+
+  animation-timing-function: ease-in-out;
+
+  animation-iteration-count: infinite;
+
+  will-change: transform;
+}
+
+/* =====================================================
+   TRIANGLE FLOAT
+===================================================== */
+
+@keyframes triangleFloat {
+
+  0% {
+
+    transform:
+      translateY(0)
+      rotate(0deg)
+      scale(1);
+
+    opacity: .25;
+
+  }
+
+  20% {
+
+    transform:
+      translateY(-10px)
+      translateX(12px)
+      rotate(8deg)
+      scale(1.03);
+
+  }
+
+  40% {
+
+    transform:
+      translateY(-30px)
+      translateX(-10px)
+      rotate(16deg)
+      scale(1.08);
+
+    opacity: .55;
+
+  }
+
+  60% {
+
+    transform:
+      translateY(-55px)
+      translateX(14px)
+      rotate(25deg)
+      scale(1.12);
+
+    opacity: .85;
+
+  }
+
+  80% {
+
+    transform:
+      translateY(-25px)
+      translateX(-8px)
+      rotate(12deg)
+      scale(1.05);
+
+  }
+
+  100% {
+
+    transform:
+      translateY(0)
+      rotate(0deg)
+      scale(1);
+
+    opacity: .25;
+
+  }
+
+}
+
+/* =====================================================
+   TRIANGLE FLOAT REVERSE
+===================================================== */
+
+@keyframes triangleFloatReverse {
+
+  0% {
+
+    transform:
+      translateY(0)
+      rotate(0deg);
+
+    opacity: .25;
+
+  }
+
+  30% {
+
+    transform:
+      translateY(20px)
+      translateX(-15px)
+      rotate(-10deg);
+
+  }
+
+  60% {
+
+    transform:
+      translateY(45px)
+      translateX(15px)
+      rotate(-25deg);
+
+    opacity: .8;
+
+  }
+
+  100% {
+
+    transform:
+      translateY(0)
+      rotate(0deg);
+
+    opacity: .25;
+
+  }
+
+}
+
+/* =====================================================
+   PARTICLES
+===================================================== */
+
+.particle {
+
+  position: absolute;
+
+  border-radius: 9999px;
+
+  background: rgba(255,255,255,.75);
+
+  box-shadow:
+    0 0 12px rgba(255,255,255,.8);
+
+  animation-name: particleFloat;
+
+  animation-timing-function: linear;
+
+  animation-iteration-count: infinite;
+
+}
+
+@keyframes particleFloat {
+
+  0% {
+
+    transform:
+      translateY(0)
+      scale(1);
+
+    opacity: 0;
+
+  }
+
+  20% {
+
+    opacity: .7;
+
+  }
+
+  70% {
+
+    opacity: .7;
+
+  }
+
+  100% {
+
+    transform:
+      translateY(-180px)
+      scale(1.6);
+
+    opacity: 0;
+
+  }
+
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width:1024px){
+
+  .triangle-shape{
+
+    opacity:.12;
+
+  }
+
+}
+
+@media (max-width:768px){
+
+  .triangle-shape{
+
+    display:none;
+
+  }
+
+  .particle{
+
+    display:none;
+
+  }
+
+}
