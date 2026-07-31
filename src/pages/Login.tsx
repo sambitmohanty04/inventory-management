@@ -111,7 +111,17 @@ export default function Login() {
 
         {/* Left Section */}
         <div className="flex flex-col items-center justify-center border-r border-white/10 px-10 text-center">
-
+          <div className="mb-8 flex justify-center">
+            <img
+                src="/logo-m.png"
+                alt="Logo"
+                style={{
+                    maxWidth:"300px",
+                    marginTop: "4px",
+                    objectFit: "contain",
+                }}
+            />
+          </div>
           <span className="rounded-full border border-white/20 bg-white/10 px-6 py-2 text-sm font-medium text-white backdrop-blur-xl">
             Inventory Management System
           </span>
