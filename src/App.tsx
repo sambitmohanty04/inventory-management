@@ -1,12 +1,38 @@
-import Login from "./pages/Login";
+
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Login from "./pages/Login";
+import Layout from "./components/Layout"
+import Dashboard from "./pages/Dashboard";
 
 function App() {
 
   return (
     <>
-      <Login />
+      <BrowserRouter>
+        <Routes>
+
+          <Route path="/" element={<Layout />}>
+
+            <Route
+              index
+              element={<Dashboard />}
+            />
+
+            <Route
+              path="/login"
+              element={<Login />}
+            />
+
+          </Route>
+
+        </Routes>
+      </BrowserRouter>
       <ToastContainer
         position="top-right"
         autoClose={3000}

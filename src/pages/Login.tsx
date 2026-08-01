@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+//import { useNavigate } from "react-router-dom";
 import LoginForm from "../pages/LoginForm";
 
 interface Triangle {
@@ -19,12 +20,10 @@ interface Particle {
 }
 
 export default function Login() {
-  // Floating Triangles
+  //const navigate = useNavigate()
   const triangles = useMemo<Triangle[]>(
     () =>
       Array.from({ length: 20 }, (_, index) => ({
-        // First 10 => Left Side
-        // Next 10 => Right Side
         left:
           index < 10
             ? Math.random() * 25
